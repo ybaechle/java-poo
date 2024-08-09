@@ -1,5 +1,3 @@
-import conceptsbase.exo1.TestCompte; // Import other necessary test classes here
-
 import java.util.Scanner;
 
 public class Main {
@@ -50,6 +48,12 @@ public class Main {
         switch (exerciseChoice) {
             case 1:
                 conceptsbase.exo1.TestCompte.testCompte();
+                break;
+            case 2:
+                conceptsbase.exo2.Execution.execute();
+                break;
+            case 3:
+                conceptsbase.exo3.TestRectangle.execute();
                 break;
             default:
                 System.out.println("Numéro d'exercice invalide.");
