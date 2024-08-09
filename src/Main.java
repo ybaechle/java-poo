@@ -1,15 +1,58 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import conceptsbase.exo1.TestCompte; // Import other necessary test classes here
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Main main = new Main();
+        main.start();
+    }
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+    public void start() {
+        Scanner scanner = new Scanner(System.in);
+
+        while (true) {
+            System.out.println("Veuillez choisir une catégorie :");
+            System.out.println("1. Concepts de base");
+            System.out.println("0. Quitter");
+
+            int categoryChoice = scanner.nextInt();
+
+            if (categoryChoice == 0) {
+                System.out.println("Au revoir !");
+                break;
+            }
+
+            System.out.println("Veuillez entrer un numéro d'exercice : ");
+            int exerciseChoice = getIntInput(scanner);
+
+            switch (categoryChoice) {
+                case 1:
+                    handleConceptsBase(scanner, exerciseChoice);
+                    break;
+                default:
+                    System.out.println("Numéro de catégorie invalide.");
+            }
+        }
+    }
+
+    private int getIntInput(Scanner scanner) {
+        while (!scanner.hasNextInt()) {
+            System.out.println("Entrée invalide. Veuillez entrer un numéro.");
+            scanner.nextLine();
+        }
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        return choice;
+    }
+
+    private void handleConceptsBase(Scanner scanner, int exerciseChoice) {
+        switch (exerciseChoice) {
+            case 1:
+                conceptsbase.exo1.TestCompte.testCompte();
+                break;
+            default:
+                System.out.println("Numéro d'exercice invalide.");
         }
     }
 }
