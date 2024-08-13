@@ -55,6 +55,9 @@ public class Main {
             case 3:
                 conceptsbase.exo3.TestRectangle.execute();
                 break;
+            case 4:
+                conceptsbase.exo4.geometry.TestCercle.execute();
+                break;
             default:
                 System.out.println("Numéro d'exercice invalide.");
         }
