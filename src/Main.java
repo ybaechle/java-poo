@@ -13,6 +13,7 @@ public class Main {
             System.out.println("Veuillez choisir une catégorie :");
             System.out.println("1. Concepts de base");
             System.out.println("2. Encapsulation");
+            System.out.println("3. Heritage");
             System.out.println("0. Quitter");
 
             int categoryChoice = scanner.nextInt();
@@ -31,6 +32,9 @@ public class Main {
                     break;
                 case 2:
                     handleEncapsulation(scanner, exerciseChoice);
+                    break;
+                case 3:
+                    handleInheritance(scanner, exerciseChoice);
                     break;
                 default:
                     System.out.println("Numéro de catégorie invalide.");
@@ -70,8 +74,21 @@ public class Main {
 
     private void handleEncapsulation(Scanner scanner, int exerciseChoice) {
         switch (exerciseChoice) {
-            case 1:
+            case 1, 2, 3, 4:
                 encapsulation.exo1.Livre.main(null);
+                break;
+            default:
+                System.out.println("Numéro d'exercice invalide.");
+        }
+    }
+
+    private void handleInheritance(Scanner scanner, int exerciseChoice) {
+        switch (exerciseChoice) {
+            case 1:
+                heritage.exo1.Main.main(null);
+                break;
+            case 2:
+                heritage.exo2.Main.main(null);
                 break;
             default:
                 System.out.println("Numéro d'exercice invalide.");
