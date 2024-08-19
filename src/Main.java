@@ -12,6 +12,7 @@ public class Main {
         while (true) {
             System.out.println("Veuillez choisir une catégorie :");
             System.out.println("1. Concepts de base");
+            System.out.println("2. Encapsulation");
             System.out.println("0. Quitter");
 
             int categoryChoice = scanner.nextInt();
@@ -28,11 +29,15 @@ public class Main {
                 case 1:
                     handleConceptsBase(scanner, exerciseChoice);
                     break;
+                case 2:
+                    handleEncapsulation(scanner, exerciseChoice);
+                    break;
                 default:
                     System.out.println("Numéro de catégorie invalide.");
             }
         }
     }
+
 
     private int getIntInput(Scanner scanner) {
         while (!scanner.hasNextInt()) {
@@ -57,6 +62,16 @@ public class Main {
                 break;
             case 4:
                 conceptsbase.exo4.geometry.TestCercle.execute();
+                break;
+            default:
+                System.out.println("Numéro d'exercice invalide.");
+        }
+    }
+
+    private void handleEncapsulation(Scanner scanner, int exerciseChoice) {
+        switch (exerciseChoice) {
+            case 1:
+                encapsulation.exo1.Livre.main(null);
                 break;
             default:
                 System.out.println("Numéro d'exercice invalide.");
