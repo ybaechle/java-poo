@@ -3,11 +3,13 @@ package heritage.exo2;
 public class Capitale extends Ville {
     private String pays;
 
+    // Constructeur avec 2 paramètres
     public Capitale(String nom, String pays) {
         super(nom);
         this.pays = pays;
     }
 
+    // Constructeur avec 3 paramètres
     public Capitale(String nom, String pays, int nbHab) {
         super(nom, nbHab);
         this.pays = pays;
@@ -21,6 +23,7 @@ public class Capitale extends Ville {
         this.pays = pays;
     }
 
+    // Surcharge de la méthode parente afficheToi()
     @Override
     public void afficheToi() {
         System.out.print("Ville: " + getNom());

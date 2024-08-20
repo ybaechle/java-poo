@@ -1,14 +1,13 @@
 package encapsulation.exo1;
 
 public class Livre {
-    // Variables
     private String titre;
     private String auteur;
     private int nbPages;
     private double prix;
     private boolean prixFixe;
 
-    // Constructeur sans paramètre
+    // Constructeur sans paramètres
     public Livre() {
         this.titre = "Inconnu";
         this.auteur = "Inconnu";
@@ -43,7 +42,7 @@ public class Livre {
         setPrix(prix);
     }
 
-    // Getters
+    // Getters et Setters
     public String getTitre() {
         return titre;
     }
@@ -91,6 +90,30 @@ public class Livre {
         }
     }
 
+
+    // Méthode main pour tester la classe Livre
+    public static void main(String[] args) {
+        // Créer une instance de Livre sans prix
+        Livre livre1 = new Livre("Titre1", "Auteur1", 300);
+        livre1.setPrix(25.50);
+        livre1.setPrix(30.00); // Provoque une erreur car le prix a déjà été fixé
+
+        // Créer une instance de Livre avec prix
+        Livre livre2 = new Livre("Titre2", "Auteur2", 450, 20.00);
+        livre2.setPrix(22.00); // Provoque une erreur car le prix a déjà été fixé
+
+        // Afficher le nombre de pages total des deux livres
+        int totalPages = livre1.getNbPages() + livre2.getNbPages();
+        System.out.println("\nNombre de pages total des 2 livres : "+ totalPages);;
+
+        // Afficher la description des deux livres
+        System.out.println("\nDescription du livre 1 :");
+        livre1.afficheToi();
+        System.out.println("\nDescription du livre 2 :");
+        livre2.afficheToi();
+    }
+
+
     // Méthode pour afficher une description du livre
     public void afficheToi() {
         System.out.println("Titre : " + titre);
@@ -99,21 +122,4 @@ public class Livre {
         System.out.println("Prix : " + prix + " euros");
     }
 
-    // Méthode main pour tester la classe Livre
-    public static void main(String[] args) {
-        // Créer une instance de Livre sans prix
-        Livre livre1 = new Livre("Titre1", "Auteur1", 300);
-        livre1.setPrix(25.50);
-        livre1.setPrix(30.00); // Provoque une erreur
-
-        // Créer une instance de Livre avec prix
-        Livre livre2 = new Livre("Titre2", "Auteur2", 450, 20.00);
-        livre2.setPrix(22.00); // Provoque une erreur
-
-        // Afficher la description des deux livres
-        System.out.println("\nDescription du livre 1 :");
-        livre1.afficheToi();
-        System.out.println("\nDescription du livre 2 :");
-        livre2.afficheToi();
-    }
 }

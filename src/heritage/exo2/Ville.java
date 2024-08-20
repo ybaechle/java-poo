@@ -4,13 +4,13 @@ public class Ville {
     private String nom;
     protected int nbHab;
 
-    // Constructeur avec un argument
-    public Ville(String leNom) {
-        this.nom = leNom;
+    // Constructeur avec un seul paramètre
+    public Ville(String nom) {
+        this.nom = nom;
         this.nbHab = -1;
     }
 
-    // Constructeur avec deux arguments
+    // Constructeur avec deux paramètres
     public Ville(String leNom, int leNbHab) {
         this.nom = leNom;
         if (leNbHab < 0) {
@@ -21,17 +21,15 @@ public class Ville {
         }
     }
 
-    // Getter pour nom
+    // Getter et Setters
     public String getNom() {
         return nom;
     }
 
-    // Getter pour nbHab
     public int getNbHab() {
         return nbHab;
     }
 
-    // Setter pour nbHab
     public void setNbHab(int leNbHab) {
         if (leNbHab < 0) {
             System.out.println("Un nombre d'habitant doit être positif. La modification n'a pas été prise en compte.");
@@ -40,7 +38,7 @@ public class Ville {
         }
     }
 
-    // Méthode afficheToi
+    // Méthode d'affichage
     public void afficheToi() {
         System.out.println("Ville: " + nom);
         if (nbHab == -1) {

@@ -10,6 +10,7 @@ public class Staff extends Person {
         this.pay = pay;
     }
 
+    // Getters et Setters
     public String getSchool() {
         return school;
     }
@@ -26,6 +27,7 @@ public class Staff extends Person {
         this.pay = pay;
     }
 
+    // Surcharge du de la méthode toString() définie dans la classe parente
     @Override
     public String toString() {
         return "Staff[" + super.toString() + ", school=" + school + ", pay=" + pay + "]";

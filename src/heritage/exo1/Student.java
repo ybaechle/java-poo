@@ -12,6 +12,7 @@ public class Student extends Person {
         this.fee = fee;
     }
 
+    // Getters et Setters
     public String getProgram() {
         return program;
     }
@@ -36,6 +37,7 @@ public class Student extends Person {
         this.fee = fee;
     }
 
+    // Surcharge du de la méthode toString() définie dans la classe parente
     @Override
     public String toString() {
         return "Student[" + super.toString() + ", program=" + program + ", year=" + year + ", fee=" + fee + "]";

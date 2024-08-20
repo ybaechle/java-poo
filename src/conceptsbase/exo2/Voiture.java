@@ -1,13 +1,16 @@
 package conceptsbase.exo2;
 
 public class Voiture {
-    String marque;
-    double prix;
+    private String marque;
+    private double prix;
 
+    // Contructeur sans paramètres
     public Voiture() {
-
+    this.marque = "Mercedes";
+    this.prix = 50000;
     }
 
+    // Getters et Setters
     public String getMarque() {
         return marque;
     }
@@ -25,8 +28,8 @@ public class Voiture {
     }
 
     public void afficher() {
-        System.out.println("Marque: " + this.marque);
-        System.out.println("Prix: " + this.prix);
+        System.out.println("Marque: " + marque);
+        System.out.println("Prix: " + prix);
     }
 
 }

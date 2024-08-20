@@ -1,13 +1,13 @@
 package conceptsbase.exo2;
 
 public class Execution {
-    public static void execute() {
+    public static void test() {
 
-        System.out.println("Etape 1 : Créer une instance de Voiture;");
-
+        System.out.println("Etape 1 : Créer une instance de Voiture avec le constructeur sans paramètres");
         Voiture voiture = new Voiture();
+        voiture.afficher();
 
-        System.out.println("Etape 2 : Définir les valeurs des attributs");
+        System.out.println("Etape 2 : Définir de nouvelles valeurs aux attributs");
         voiture.setMarque("Toyota");
         voiture.setPrix(25000.0);
 
